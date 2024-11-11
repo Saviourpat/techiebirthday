@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Blessing!</title>
+    <style>
+        /* General body styling */
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            position: relative;
+            overflow: hidden; /* Prevent elements from overflowing */
+        }
+
+        /* Container with grid layout */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        /* Birthday message styling */
+        #birthday-message {
+            font-size: 36px;
+            color: #ff69b4;
+            font-weight: bold;
+            margin-top: 0px;
+            opacity: 0;
+            animation: messageAnimation 2s ease-in-out forwards;
+        }
+
+        @keyframes messageAnimation {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Sweet birthday paragraph styling */
+        #sweet-birthday-message {
+            font-size: 24px;
+            color: #ff4500;
+            margin: 0;
+            opacity: 0;
+            animation: sweetMessageAnimation 2s ease-in-out forwards;
+        }
+
+        @keyframes sweetMessageAnimation {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Profile picture styling */
+        #profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-top: 20px;
+            transition: width 0.3s, height 0.3s; /* Smooth resizing */
+        }
+
+        /* Flower and Bell animations */
+        .flower, .bell, .snowman {
+            position: absolute;
+            font-size: 30px;
+            animation: flowerAnimation 4s infinite;
+        }
+
+        /* Balloon animation */
+        .balloon {
+            position: absolute;
+            font-size: 40px;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        /* Flower rotation animation */
+        @keyframes flowerAnimation {
+            0% { transform: rotate(0); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Float up and down animation for balloons and bells */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Snowman bouncing animation */
+        @keyframes snowmanAnimation {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Audio settings */
+        audio {
+            display: none;
+        }
+
+        /* Button styling */
+        #play-button {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #play-button:hover {
+            background-color: #ff1493;
+        }
+
+        /* Mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            #profile-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            #birthday-message {
+                font-size: 28px;
+            }
+
+            .balloon, .bell {
+                font-size: 30px;
+            }
+
+            .flower, .snowman {
+                font-size: 25px;
+            }
+
+            /* Adjust flower and bell positions on mobile */
+            .flower {
+                font-size: 20px;
+            }
+
+            /* Reposition floating elements to avoid overlap */
+            .flower {
+                top: 350px;
+            }
+
+            .snowman {
+                top: 380px;
+                left: 50%;
+                transform: translateX(-50%); /* Center snowman */
+            }
+
+            .bell {
+                font-size: 25px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* For very small screens (phones) */
+        @media screen and (max-width: 480px) {
+            #profile-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            #birthday-message {
+                font-size: 24px;
+            }
+
+            .balloon, .bell {
+                font-size: 25px;
+            }
+
+            .flower {
+                font-size: 18px;
+            }
+
+            .snowman {
+                font-size: 25px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+      
+        <!-- Play button to trigger music -->
+        <button id="play-button">🎶 Play Music 🎶</button>
+
+        <!-- Image of Blessing -->
+        <img id="profile-img" src="./466600047_481757718219028_7100265222713033723_n.jpg" alt="Blessing's photo">
+        
+        <!-- Sweet birthday paragraph (hidden initially) -->
+<div id="sweet-birthday-message">
+  <p>May your day be filled with love, laughter, and all the joy you deserve! 💖🎉</p>
+</div>
+        <!-- Birthday message -->
+        <div id="birthday-message">
+            <p>🎉🎂 Happy Birthday, Blessing! 🎂🎉</p>
+        </div>
+
+        <!-- Audio element -->
+        <audio id="background-music" autoplay loop muted>
+            <source src="./happy-birthday-258264.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Balloon and flower animations -->
+        <div class="balloon" style="top: 20px; left: 50px;">🎈</div>
+        <div class="balloon" style="top: 100px; left: 200px;">🎈</div>
+        <div class="flower" style="top: 50px; right: 50px;">🌸</div>
+        <div class="flower" style="top: 200px; left: 150px;">🌸</div>
+
+        <!-- Additional flowers below the birthday message -->
+        <div class="flower" style="top: 350px; left: 30px;">🌸</div>
+        <div class="flower" style="top: 350px; right: 30px;">🌸</div>
+
+        <!-- Snowman animation -->
+        <div class="snowman" style="top: 400px; left: 50%; animation: snowmanAnimation 3s infinite;">
+            ⛄
+        </div>
+
+        <!-- Jingle Bells animation -->
+        <div class="bell" style="top: 80px; left: 300px;">🔔</div>
+        <div class="bell" style="top: 120px; left: 150px;">🔔</div>
+        <div class="bell" style="top: 180px; right: 500px;">🔔</div>
+    </div>
+
+    <script>
+        // JavaScript to handle autoplay and button click
+        const playButton = document.getElementById('play-button');
+        const audio = document.getElementById('background-music');
+        const sweetMessage = document.getElementById('sweet-birthday-message');
+        const birthdayMessage = document.getElementById('birthday-message');
+
+        // Play the audio when the page loads, with a fallback to button click
+        window.onload = function() {
+            // Try autoplay first
+            audio.play().then(() => {
+                // Unmute after starting playback
+                audio.muted = false;
+            }).catch((error) => {
+                console.log("Autoplay failed:", error);
+            });
+
+            // Show the birthday message with animation
+            setTimeout(() => {
+                birthdayMessage.style.opacity = 1;
+            }, 1000); // Show birthday message after 1 second
+        };
+
+        // Event listener for play button
+        playButton.addEventListener('click', function() {
+            // Start playing the music when the button is clicked
+            audio.play().then(() => {
+                audio.muted = false; // Unmute after play starts
+            });
+
+            // Display sweet birthday message after button click
+            sweetMessage.style.opacity = 1;
+        });
+    </script>
+</body>
+</html>
