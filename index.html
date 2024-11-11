@@ -117,71 +117,14 @@
             background-color: #ff1493;
         }
 
-        /* Mobile responsiveness */
-        @media screen and (max-width: 768px) {
-            #profile-img {
-                width: 120px;
-                height: 120px;
-            }
-
-            #birthday-message {
-                font-size: 28px;
-            }
-
-            .balloon, .bell {
-                font-size: 30px;
-            }
-
-            .flower, .snowman {
-                font-size: 25px;
-            }
-
-            /* Adjust flower and bell positions on mobile */
-            .flower {
-                font-size: 20px;
-            }
-
-            /* Reposition floating elements to avoid overlap */
-            .flower {
-                top: 350px;
-            }
-
-            .snowman {
-                top: 380px;
-                left: 50%;
-                transform: translateX(-50%); /* Center snowman */
-            }
-
-            .bell {
-                font-size: 25px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
-
-        /* For very small screens (phones) */
-        @media screen and (max-width: 480px) {
-            #profile-img {
-                width: 100px;
-                height: 100px;
-            }
-
-            #birthday-message {
-                font-size: 24px;
-            }
-
-            .balloon, .bell {
-                font-size: 25px;
-            }
-
-            .flower {
-                font-size: 18px;
-            }
-
-            .snowman {
-                font-size: 25px;
-            }
-        }
+@media screen and (max-width: 767px)
+{
+body{
+    display: block;
+}
+}
+    
+      
 
     </style>
 </head>
